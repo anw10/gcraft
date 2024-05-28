@@ -10,7 +10,7 @@ const router = createRouter({
       component: LandingPage
     },
     {
-      path: '/repairCustom',
+      path: '/repair',
       name: 'repairCustom',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -18,12 +18,22 @@ const router = createRouter({
       component: () => import('../views/RepairCustom.vue')
     },
     {
-      path: '/craftWork',
+      path: '/craft',
       name: 'craftWork',
       component: () => import('../views/CraftWork.vue')
     },
     {
-      path: '/eqList',
+      path: '/recTech',
+      name: 'recTech',
+      component: () => import('../views/RecTech.vue')
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('../views/ProductList.vue')
+    },
+    {
+      path: '/equipment',
       name: 'eqList',
       component: () => import('../views/Equipment.vue')
     },

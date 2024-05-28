@@ -3,8 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <v-app>
-    <v-navigation-drawer expand-on-hover rail>
+  <v-layout class="rounded rounded-md">
+    <v-navigation-drawer expand-on-hover rail class="ml-1">
       <v-list>
         <v-list-item
           prepend-avatar="/src/assets/logo.jpg"
@@ -15,21 +15,52 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <v-divider></v-divider>
 
-      <v-list lines="two" nav>
-        <v-list-item to="/" prepend-avatar="/src/assets/logo.jpg">Home</v-list-item>
-        <v-list-item to="/repairCustom" prepend-icon="mdi-wrench">Repair Custom</v-list-item>
-        <v-list-item to="/craftWork" prepend-icon="mdi-guitar-acoustic">Craft Work</v-list-item>
-        <v-list-item to="/eqList" prepend-icon="mdi-list-box">Equipment List</v-list-item>
-        <v-list-item to="/support" prepend-icon="mdi-lifebuoy">Support</v-list-item>
+      <v-list density="compact" :lines="false" nav>
+        <v-list-item
+          prepend-icon="mdi-home-city"
+          title="Home"
+          @click="$router.push({ path: 'repairCustom' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-tools"
+          title="Repair Custom"
+          @click="$router.push({ path: '/repair' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-pencil-ruler"
+          title="Craft Work"
+          @click="$router.push({ path: '/craft' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-record-rec"
+          title="Rec & Tech"
+          @click="$router.push({ path: '/recTech' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-clipboard-list"
+          title="Equipment List"
+          @click="$router.push({ path: '/equipment' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-shopping"
+          title="Product List"
+          @click="$router.push({ path: '/products' })"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-lifebuoy"
+          title="Support"
+          @click="$router.push({ path: '/support' })"
+        ></v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-    <RouterView />
-  </v-app>
+    <v-main class="d-flex align-center justify-center" style="min-height: 300px">
+      <RouterView />
+    </v-main>
+  </v-layout>
 </template>
 
 <style scoped>
-/* header {
+header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -85,9 +116,8 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: -1rem;
   }
-} */
+}
 </style>
