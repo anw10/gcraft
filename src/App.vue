@@ -1,15 +1,25 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+
+export default {
+  data() {
+    return {
+      drawer: false
+    }
+  }
+}
 </script>
 
 <template>
   <v-layout class="rounded rounded-md">
+    <v-app-bar-nav-icon @click="drawer = true" class="d-flex d-sm-none"></v-app-bar-nav-icon>
     <v-navigation-drawer expand-on-hover rail class="ml-1">
       <v-list>
         <v-list-item
+          density="compact"
           prepend-avatar="/src/assets/logo.jpg"
           title="GCraft"
-          subtitle="example@test.com"
+          subtitle="m.guitar.craft@gmail.com"
         ></v-list-item>
       </v-list>
 
@@ -19,7 +29,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <v-list-item
           prepend-icon="mdi-home-city"
           title="Home"
-          @click="$router.push({ path: 'repairCustom' })"
+          @click="$router.push({ path: '/' })"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-tools"
@@ -53,28 +63,21 @@ import { RouterLink, RouterView } from 'vue-router'
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main class="d-flex align-center justify-center" style="min-height: 300px">
-      <RouterView />
-    </v-main>
+    <RouterView />
   </v-layout>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.v-layout {
+  /* background-color: red; */
+  width: 100%;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  text-align: left;
+  font-size: 1rem;
+  padding: 1rem 0;
+  margin-top: -1rem;
 }
 
 nav a.router-link-exact-active {
@@ -93,31 +96,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: -1rem;
-  }
 }
 </style>

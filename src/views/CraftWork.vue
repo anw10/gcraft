@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="width: 500px">
     <v-col>
       <v-card
         ><v-card-title>Custom Order</v-card-title><v-card-subtitle>Guitar</v-card-subtitle

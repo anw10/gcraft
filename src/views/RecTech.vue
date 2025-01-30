@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="width: 500px">
     <v-col>
       <v-card
         ><v-card-title>REC</v-card-title
@@ -36,9 +36,7 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .recTech {
-    min-height: 100vh;
-  }
+.recTech {
+  min-height: 100vh;
 }
 </style>
